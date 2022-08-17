@@ -1,6 +1,6 @@
-import React from "react";
-import { ScrollView, StyleSheet } from 'react-native'
-import PhotoCard from "./PhotoCard";
+import { ScrollView } from 'react-native'
+import { photoListStyles } from "../assets/styles";
+import PhotoCard from "../components/PhotoCard";
 
 const bsPhotos= [
     {id: 1, description: 'Selfie with Mom'}, 
@@ -18,7 +18,7 @@ const bsPhotos= [
 
 function PhotoList () {
     return (
-        <ScrollView style={styles.photoList}>
+        <ScrollView style={photoListStyles.photoList}>
             {bsPhotos.map(photo => (
                 <PhotoCard key={photo.id} photo={photo}/>
             ))}
@@ -26,11 +26,4 @@ function PhotoList () {
     )
 }
 
-const styles = StyleSheet.create({
-    photoList: {
-        flex: 1, 
-        backgroundColor: '#e8e8e8',
-
-    }
-})
 export default PhotoList
